@@ -1,0 +1,43 @@
+.rbc-calendar {
+  @apply font-sans;
+}
+
+.rbc-header {
+  @apply py-2 font-semibold text-gray-700;
+}
+
+.rbc-event {
+  @apply bg-blue-600 border-none rounded;
+}
+
+.rbc-today {
+  @apply bg-blue-50;
+}
+
+.rbc-off-range-bg {
+  @apply bg-gray-50;
+}
+
+.rbc-month-view {
+  @apply border-gray-200;
+}
+
+.rbc-day-bg + .rbc-day-bg {
+  @apply border-gray-200;
+}
+
+.rbc-month-row + .rbc-month-row {
+  @apply border-gray-200;
+}
+
+.rbc-date-cell {
+  @apply text-gray-700 p-1;
+}
+
+.rbc-date-cell.rbc-now {
+  @apply font-semibold text-blue-600;
+}
+
+.rbc-event-content {
+  @apply text-sm font-medium;
+} 
