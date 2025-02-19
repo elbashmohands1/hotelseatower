@@ -1,37 +1,28 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { AuthProvider } from "@/providers/auth";
 import "./globals.css";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import { CldUploadWidget } from 'next-cloudinary';
+import { Providers } from "@/providers";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Luxury Hotel",
-  description: "Welcome to our luxury hotel booking website",
+  title: "Luxury Hotel - Your Perfect Stay",
+  description: "Experience luxury and comfort at our premium hotel. Book your perfect stay today.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          src="https://widget.cloudinary.com/v2.0/global/all.js"
-          type="text/javascript"
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <AuthProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </AuthProvider>
+        <Providers>
+          {children}
+          <Toaster position="top-center" />
+        </Providers>
       </body>
     </html>
   );
